@@ -50,4 +50,4 @@ const User = mongoose.model<UserDoc, UserModel>('User', userSchema);
 
 
 
-export { User, buildUser };
+export { User };
