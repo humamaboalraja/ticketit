@@ -40,7 +40,7 @@ router.post('/api/users/signup', [
          id: user.id,
          email: user.email
       }, 
-         process.env.JWT_KEY
+         process.env.JWT_KEY!
       );
 
       // Store it in session object
