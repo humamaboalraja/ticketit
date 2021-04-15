@@ -5,7 +5,7 @@ import { Password } from '../services/password'
    Interface: Describing the properties that are
    required to create a new User
 */
-interface UserAttrs { 
+interface UserAttrs {
    email: string,
    password: string;
 }
@@ -31,19 +31,19 @@ interface UserDoc extends mongoose.Document {
 
 
 const userSchema = new mongoose.Schema({
-      email: {
-         type: String,
-         required: true
-      },
-      password: {
-         type: String,
-         required: true
-      }
+   email: {
+      type: String,
+      required: true
    },
+   password: {
+      type: String,
+      required: true
+   }
+},
    {
       // Customizing the JSON response
       toJSON: {
-         transform(doc, ret){
+         transform(doc, ret) {
             ret.id = ret._id
             delete ret._id;
             delete ret.password;
@@ -54,8 +54,8 @@ const userSchema = new mongoose.Schema({
 );
 
 // 
-userSchema.pre('save', async function(done) {
-   if(this.isModified('password')) {
+userSchema.pre('save', async function (done) {
+   if (this.isModified('password')) {
       const hashed = await Password.toHash(this.get('password'));
       this.set('password', hashed)
    }
