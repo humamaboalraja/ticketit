@@ -12,3 +12,12 @@ it('responds with details about the current user with a stored cookie after a su
    
    expect(response.body.currentUser.email).toEqual('test@ticketit.com')
 })
+
+it('responds with null if not authenticated ', async () => {
+   const response = await request(app)
+      .get('api/users/currentuser')
+      .send()
+      .expect(200);
+
+   expect(response.body.currentUser).toEqual(null);
+})
