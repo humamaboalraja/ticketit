@@ -47,4 +47,35 @@ it('returns a 400 with email and password', async() => {
          password: '123456'
       })
       .expect(400);
-}); 
+});
+
+
+it('disallows duplicte emails', async () => {
+   await request(app)
+      .post('/api/users/signup')
+      .send({
+         email: 'test@ticketit.com',
+         password: 'password'
+      })
+      .expect(201)
+      
+   await request(app)
+      .post('/api/users/signup')
+      .send({
+         email: 'test@ticketit.com',
+         password: 'password'
+      })
+      .expect(400)
+});
+
+it('sets a cookie after a successful signup', async () => {
+   const response = await request(app)
+      .post('/api/users/signup')
+      .send({
+         email: 'test@ticketit.com',
+         password: 'password'
+      })
+      .expect(201);
+   
+   expect(response.get('Set-Cookie')).toBeDefined();
+})
