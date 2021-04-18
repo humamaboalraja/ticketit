@@ -1,0 +1,10 @@
+button.btn.btn-dark {
+   border-radius: 0px;
+   padding: 10px;
+   background-color: #000;
+}
+
+.form-control {
+   padding: 25px 0px 25px 9px;
+   border-radius: 0;
+}
