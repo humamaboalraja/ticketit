@@ -38,3 +38,7 @@ a.nav-link {
  .card, .alert {
    border-radius: 25px !important;
  }
+
+ .card {
+   padding: 16px !important;
+ }
