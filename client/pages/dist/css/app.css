@@ -1,10 +1,40 @@
+body { 
+   background: #eef0f1;
+}
 button.btn.btn-dark {
-   border-radius: 0px;
-   padding: 10px;
+   border-radius: 25px;
+   padding: 16px;
    background-color: #000;
 }
 
 .form-control {
-   padding: 25px 0px 25px 9px;
-   border-radius: 0;
+   padding: 30px 0px 30px 17px;
+   border-radius: 25px;
 }
+
+nav.navbar {
+   background: #000 !important;
+   border-bottom: 1px solid #000;
+   padding: 13px;
+}
+
+.navbar-brand {
+   color: #fff !important;
+   font-weight: 600;
+   letter-spacing: 1px;
+}
+
+a.nav-link {
+   color: #fff !important;
+}
+
+.centered {
+   height: 80vh; /* Magic here */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .card, .alert {
+   border-radius: 25px !important;
+ }
