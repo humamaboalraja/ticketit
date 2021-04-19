@@ -7,7 +7,7 @@ interface People {
 
 const people: People = {
    first: 1,
-   second: 2,
+   second: 2468,
    third: 3
 };
 
