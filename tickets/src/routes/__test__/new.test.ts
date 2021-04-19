@@ -1,3 +1,4 @@
+import { sign } from 'jsonwebtoken';
 import request from 'supertest';
 import { app } from '../../app';
 
@@ -15,6 +16,15 @@ it('Can only be accessed if the user is signed in', async () => {
       .expect(401);
    
 });
+
+it('Returns a status other that 401 if the user is signed in', async () => {
+   const response = await request(app)
+      .post('/api/tickets')
+      .set('Cookie', global.get_auth_cookie())
+      .send({})
+      
+   expect(response.status).not.toEqual(401);
+})
 
 it('Returns an error if an invalid title is provided', async () => {
 
