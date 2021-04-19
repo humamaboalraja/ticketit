@@ -9,7 +9,11 @@ it('Has a route handler listening to /api/tickets for post requests', async () =
 });
 
 it('Can only be accessed if the user is signed in', async () => {
-
+   const response = await request(app)
+      .post('/api/tickets')
+      .send({})
+      .expect(401);
+   
 });
 
 it('Returns an error if an invalid title is provided', async () => {
