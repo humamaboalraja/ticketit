@@ -10,8 +10,7 @@ import { signupRouter } from './routes/signup';
 import { signoutRouter } from './routes/signout';
 
 // Error handler
-import { errorHandler } from './middlewares/error-handler';
-import { NotFoundError } from './errors/not-found-error';
+import { errorHandler, NotFoundError } from "@ticketit/common";
 
 const app = express();
 
