@@ -2,13 +2,14 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import request from 'supertest';
 import { app } from '../app';
+import jwt from 'jsonwebtoken';
 
 // defining a global property
 declare global {
   namespace NodeJS {
     interface Global {
       // Our promise is going to resolve itself with a cookie (string[])
-      get_auth_cookie(): Promise<string[]>;
+      get_auth_cookie(): string[];
     }
   }
 }
@@ -47,17 +48,27 @@ afterAll(async () => {
  });
 
 // Globally scoped function
-global.get_auth_cookie = async () => {
-  const email = 'test@ticketit.com';
-  const password = 'password';
+global.get_auth_cookie = () => {
 
-  const response = await request(app)
-    .post('/api/users/signup')
-    .send({
-      email, password
-    })
-    .expect(201);
-  
-  const cookie = response.get('Set-Cookie');
-  return cookie;
+  // Building a JWT payload
+  const payload = {
+    id: '3h4j2j28jwfnc',
+    email: 'humam@ticketit.com'
+  };
+
+  // Creating the JWT!
+  const token = jwt.sign(payload, process.env.JWT_KEY!)
+
+  // Building session Object. { jwt:  MY_JWT }
+  const session = { jwt: token }
+
+  // Turning the session into JSON
+  const sessionJSON = JSON.stringify(session)
+
+  // Encoding JSON as base64
+  const base64 = Buffer.from(sessionJSON).toString('base64');
+
+  // Returning a string that has a cookie with encoded data
+  return [`express:sess=${base64}`]
+
 }
