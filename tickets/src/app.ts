@@ -7,7 +7,7 @@ import cookieSession from 'cookie-session';
 import { createTicketRouter } from './routes/new';
 
 // Error handler
-import { errorHandler, NotFoundError } from "@ticketit/common";
+import { errorHandler, NotFoundError, currentUser } from "@ticketit/common";
 
 const app = express();
 
@@ -21,6 +21,9 @@ app.use(
       secure: process.env.NODE_ENV !== 'test'
    })
 );
+
+// Auth middleware protection
+app.use(currentUser);
 
 // Adding Routers
 app.use(createTicketRouter);
