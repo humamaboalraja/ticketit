@@ -1,16 +1,13 @@
-interface People {
-   first: number;
-   second: number;
-   third: number;
-}
+// Error types
+export * from './errors/bad-request-error';
+export * from './errors/custom-error';
+export * from './errors/database-connection-error';
+export * from './errors/not-authorized-error';
+export * from './errors/not-found-error';
+export * from './errors/request-validation-error';
 
-
-const people: People = {
-   first: 1,
-   second: 2468,
-   third: 3
-};
-
-console.log(people)
-
-export default people;
+// Middlewares
+export * from './middlewares/current-user';
+export * from './middlewares/error-handler';
+export * from './middlewares/require-auth';
+export * from './middlewares/validate-request';
