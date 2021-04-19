@@ -3,7 +3,8 @@ import 'express-async-errors';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 
-
+// Routers
+import { createTicketRouter } from './routes/new';
 
 // Error handler
 import { errorHandler, NotFoundError } from "@ticketit/common";
@@ -21,6 +22,8 @@ app.use(
    })
 );
 
+// Adding Routers
+app.use(createTicketRouter);
 
 
 app.all('*', async (req, res) => {
