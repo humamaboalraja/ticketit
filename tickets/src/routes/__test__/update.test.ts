@@ -1,0 +1,42 @@
+import request from 'supertest';
+import { app } from '../../app';
+import { Ticket } from '../../models/ticket';
+import mongoose  from 'mongoose';
+
+it('Returns a 404 if the provided id doesn not exist', async () => {
+   const id = new mongoose.Types.ObjectId().toHexString();
+   const response = await request(app)
+      .put(`/api/tickets/${id}`)
+      .set('Cookie', global.getAuthCookie())
+      .send({
+         title: 'valid_title',
+         price: 50
+      });
+   expect(404);
+});
+
+it('Returns a 401 if the user is not authenticated', async () => {
+   const id = new mongoose.Types.ObjectId().toHexString();
+   const response = await request(app)
+      .put(`/api/tickets/${id}`)
+      .send({
+         title: 'valid_title',
+         price: 50
+      });
+   expect(401);
+});
+
+it('Returns a 401 if the user does not own the ticket', async () => {
+
+   
+})
+
+it('Returns an 400 if the user provides an invalid title is provided', async () => {
+
+   
+});
+
+it('Updates the ticket provided valid inputs', async () => {
+
+   
+});
