@@ -20,18 +20,47 @@ it('Can only be accessed if the user is signed in', async () => {
 it('Returns a status other that 401 if the user is signed in', async () => {
    const response = await request(app)
       .post('/api/tickets')
-      .set('Cookie', global.get_auth_cookie())
+      .set('Cookie', global.getAuthCookie())
       .send({})
       
    expect(response.status).not.toEqual(401);
 })
 
 it('Returns an error if an invalid title is provided', async () => {
-
+   await request(app)
+      .post('/api/tickets')
+      .set('Cookie', global.getAuthCookie())
+      .send({
+         title: '',
+         price: 10
+      })
+      .expect(400);
+   await request(app)
+      .post('/api/tickets')
+      .set('Cookie', global.getAuthCookie())
+      .send({
+         price: 10
+      })
+      .expect(400);
 });
 
 it('Returns an error if an invalid price is provided', async () => {
+   await request(app)
+      .post('/api/tickets')
+      .set('Cookie', global.getAuthCookie())
+      .send({
+         title: 'example',
+         price: -10
+      })
+      .expect(400);
 
+   await request(app)
+      .post('/api/tickets')
+      .set('Cookie', global.getAuthCookie())
+      .send({
+         title: 'example'
+      })
+      .expect(400);
 });
 
 it('Creates a ticket with valid input', async () => {
