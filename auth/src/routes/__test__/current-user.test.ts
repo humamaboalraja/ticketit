@@ -2,7 +2,7 @@ import request from 'supertest';
 import { app } from '../../app';
 
 it('responds with details about the current user with a stored cookie after a successful authentication', async () => {
-   const cookie = await global.get_auth_cookie();
+   const cookie = await global.getAuthCookie();
    
    const response = await request(app)
       .get('/api/users/currentuser')
@@ -15,7 +15,7 @@ it('responds with details about the current user with a stored cookie after a su
 
 it('responds with null if not authenticated ', async () => {
    const response = await request(app)
-      .get('api/users/currentuser')
+      .get('/api/users/currentuser')
       .send()
       .expect(200);
 
