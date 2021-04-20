@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 import request from 'supertest';
 import { app } from '../app';
 import jwt from 'jsonwebtoken';
-
 // defining a global property
 declare global {
   namespace NodeJS {
@@ -49,10 +48,13 @@ afterAll(async () => {
 
 // Globally scoped function
 global.getAuthCookie = () => {
-
+  
+  // Generating random userId
+  const randomId = new mongoose.Types.ObjectId().toHexString();
+  
   // Building a JWT payload
   const payload = {
-    id: '3h4j2j28jwfnc',
+    id: randomId,
     email: 'humam@ticketit.com'
   };
 
