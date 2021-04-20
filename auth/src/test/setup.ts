@@ -8,7 +8,7 @@ declare global {
   namespace NodeJS {
     interface Global {
       // Our promise is going to resolve itself with a cookie (string[])
-      get_auth_cookie(): Promise<string[]>;
+      getAuthCookie(): Promise<string[]>;
     }
   }
 }
@@ -47,7 +47,7 @@ afterAll(async () => {
  });
 
 // Globally scoped function
-global.get_auth_cookie = async () => {
+global.getAuthCookie = async () => {
   const email = 'test@ticketit.com';
   const password = 'password';
 
