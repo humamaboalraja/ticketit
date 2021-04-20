@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import { Password } from '../services/password'
 
 /*  
    Interface: Describing the properties that are
@@ -65,7 +64,7 @@ ticketSchema.statics.build = (attrs: TicketAttrs) => {
 
 
 // Creating model
-const User = mongoose.model<TicketDoc, TicketModel>('Ticket', ticketSchema);
+const Ticket = mongoose.model<TicketDoc, TicketModel>('Ticket', ticketSchema);
 
 
 export { Ticket };
