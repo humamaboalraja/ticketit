@@ -1,6 +1,6 @@
-import { sign } from 'jsonwebtoken';
 import request from 'supertest';
 import { app } from '../../app';
+import { Ticket } from '../../models/ticket';
 
 it('Has a route handler listening to /api/tickets for post requests', async () => {
    const response = await request(app)
@@ -64,5 +64,22 @@ it('Returns an error if an invalid price is provided', async () => {
 });
 
 it('Creates a ticket with valid input', async () => {
+   let tickets = await Ticket.find({});
+   expect(tickets.length).toEqual(0);
 
+   const title = 'Ticket example'
+
+   await request(app)
+      .post('/api/tickets')
+      .set('Cookie', global.getAuthCookie())
+      .send({
+         title,
+         price: 20
+      })
+      .expect(201);
+
+      tickets = await Ticket.find({});
+      expect(tickets.length).toEqual(1);
+      expect(tickets[0].title).toEqual(title);
+      expect(tickets[0].price).toEqual(20);
 });
