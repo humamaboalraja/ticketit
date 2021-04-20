@@ -9,7 +9,7 @@ declare global {
   namespace NodeJS {
     interface Global {
       // Our promise is going to resolve itself with a cookie (string[])
-      get_auth_cookie(): string[];
+      getAuthCookie(): string[];
     }
   }
 }
@@ -48,7 +48,7 @@ afterAll(async () => {
  });
 
 // Globally scoped function
-global.get_auth_cookie = () => {
+global.getAuthCookie = () => {
 
   // Building a JWT payload
   const payload = {
