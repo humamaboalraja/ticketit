@@ -25,19 +25,19 @@ The following table refers to this service endpoints
 
 **Status** | File name/ Endpoint|
 -------|-----------|
+ ✅ **PASS** |  src/routes/__test__/show.test.ts
  ✅ **PASS** |  src/routes/__test__/new.test.ts
- ✅ **PASS** |  src/routes/__test__/current-user.test.ts
- ✅ **PASS** |  src/routes/__test__/signup.test.ts
- ✅ **PASS** |  src/routes/__test__/signin.test.ts
+ ✅ **PASS** |  src/routes/__test__/update.test.ts
+ ✅ **PASS** |  src/routes/__test__/index.test.ts
 
 <br>
 
 Stats        | Results
 -------------|---------
 Test Suites: | 4 passed, 4 total
-Tests:       | 11 passed, 11 total
+Tests:       | 14 passed, 14 total
 Snapshots:   | 0 total
-Time:        | 5.757 s
+Time:        | 30.757 s
 
 ---
 
