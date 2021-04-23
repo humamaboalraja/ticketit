@@ -10,8 +10,8 @@ The following table refers to this service endpoints
 | Route | Method | Body | Porpose |
 |----|-----|----------|--------------|
 **/api/tickets**      |  GET | - | Retrieving all items|
-**/api/tickets/:id**      |  GET | - | Retrieving an items with a spesific ID|
-**/api/tickets**      |  POST | { title: string, price: string} | Createing an item|
+**/api/tickets/:id**      |  GET | - | Retrieving an items with a specific ID|
+**/api/tickets**      |  POST | { title: string, price: string} | Creating an item|
 **/api/tickets**      |  PUT | { title: string, price: string} | Updating an item|
 
 
