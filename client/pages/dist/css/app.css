@@ -13,15 +13,28 @@ button.btn.btn-dark {
 }
 
 nav.navbar {
-   background: #000 !important;
+   background: #191919 !important;
    border-bottom: 1px solid #000;
-   padding: 13px;
+   padding: 20px;
+   margin: 26px 80px 14px 80px;
+   border-radius: 25px;
+   box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
 }
+
+@media only screen and (max-width: 600px) 
+  {
+   nav.navbar {
+      margin: 0;
+      border-radius: 0;
+   }
+  } 
 
 .navbar-brand {
    color: #fff !important;
    font-weight: 600;
    letter-spacing: 1px;
+   font-family: roboto;
+   font-size: 1.4rem;
 }
 
 a.nav-link {
@@ -42,3 +55,11 @@ a.nav-link {
  .card {
    padding: 16px !important;
  }
+
+
+
+ a.nav-link-primary {
+   background: #313131;
+   padding: 10px 30px 10px 30px;
+   border-radius: 16px;
+}
