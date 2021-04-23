@@ -13,6 +13,9 @@ declare global {
   }
 }
 
+// Mocking NATS Server
+jest.mock('../nats-wrapper.ts')
+
 let mongo: any;
 
 // Hook | Running before all tests
