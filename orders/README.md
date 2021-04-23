@@ -1,5 +1,5 @@
 # **Ticketit - Orders**
-Orders service (CRU - Create, Read, Update) features
+Orders service (CRU - Create, Read, Delete) features
 
 
 <br>
