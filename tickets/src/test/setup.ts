@@ -21,6 +21,7 @@ let mongo: any;
 // Hook | Running before all tests
 beforeAll(async () => {
    process.env.JWT_KEY = 'placeholder';
+   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
  
    mongo = new MongoMemoryServer();
    const mongoUri = await mongo.getUri();
@@ -35,6 +36,7 @@ beforeAll(async () => {
 
 // Hook | Running before each test
 beforeEach(async () => {
+   jest.clearAllMocks();
    const collections = await mongoose.connection.db.collections();
  
    for (let collection of collections) {
