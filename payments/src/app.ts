@@ -2,10 +2,11 @@ import express from 'express';
 import 'express-async-errors';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
-
-
 // Error handler
-import { errorHandler, NotFoundError, currentUser } from "@ticketit/common";
+import { errorHandler, NotFoundError, currentUser } from '@ticketit/common';
+
+import { createChargeRouter } from './routes/new';
+
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(
 
 // Auth middleware protection
 app.use(currentUser);
+app.use(createChargeRouter);
 
 
 app.all('*', async (req, res) => {
