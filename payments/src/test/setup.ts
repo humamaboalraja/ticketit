@@ -8,13 +8,15 @@ declare global {
   namespace NodeJS {
     interface Global {
       // Our promise is going to resolve itself with a cookie (string[])
-      getAuthCookie(): string[];
+      getAuthCookie(id?: string): string[];
     }
   }
 }
 
 // Mocking NATS Server
 jest.mock('../nats-wrapper.ts')
+
+process.env.STRIPE_KEY = 'sk_test_51IjzFtCoyMvipM4Vu0fJjXd6TnyeFhiM8QTrYdszxPIT5gAHtEgzDm7nVDvEBQLPpX11Cu93QVL4G9NdNw4WciNz00kMgqFda9';
 
 let mongo: any;
 
@@ -52,14 +54,11 @@ afterAll(async () => {
  });
 
 // Globally scoped function
-global.getAuthCookie = () => {
-  
-  // Generating random userId
-  const randomId = new mongoose.Types.ObjectId().toHexString();
+global.getAuthCookie = (id?: string) => {
   
   // Building a JWT payload
   const payload = {
-    id: randomId,
+    id: id || new mongoose.Types.ObjectId().toHexString(),
     email: 'humam@ticketit.com'
   };
 
