@@ -1,7 +1,7 @@
 body { 
    background: #eef0f1;
 }
-button.btn.btn-dark {
+button.btn.btn-dark, a.btn.btn-dark {
    border-radius: 25px;
    padding: 16px;
    background-color: #000;
