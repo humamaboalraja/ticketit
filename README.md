@@ -7,6 +7,19 @@ The aim of this project is to build an e-commerce microservices architecutre tic
 
 <br>
 
+
+
+## 🏛 **Architecture**
+Application Architecture/ Components
+
+![](.github_assets/Architecture.jpg)
+
+
+
+---
+
+<br>
+
 ## 💎 **Repository structure**
 - The architecutre consists of five **microservices**.
 - The source code of each **microservice** resides in its own sub-directory, which is named after the microservice.
@@ -31,4 +44,8 @@ Overview of the application services
 
 <br>
 
-For more detailed informations about how this microservices architecutre is working together, check out [`ARCHITECTURE.md`](./ARCHITECTURE.md)
+## 🧪 **Setup**
+- The architecutre consists of five **microservices**.
+- The source code of each **microservice** resides in its own sub-directory, which is named after the microservice.
+- **React Client application** that interacts with all of these services. 
+- Reusable package that deals with common re-usable tools e.g(error handling, middlewares, etc..)
