@@ -25,19 +25,18 @@ The following table refers to this service endpoints
 
 **Status** | File name/ Endpoint|
 -------|-----------|
- ✅ **PASS** |  src/routes/__test__/show.test.ts
- ✅ **PASS** |  src/routes/__test__/new.test.ts
- ✅ **PASS** |  src/routes/__test__/update.test.ts
- ✅ **PASS** |  src/routes/__test__/index.test.ts
+ ✅ **PASS** |  src/events/listeners/__test__/ticket-created-listener.test.ts
+ ✅ **PASS** |  src/events/listeners/__test__/ticket-updated-listener.test.ts
+ ✅ **PASS** |  src/events/listeners/__test__/expiration-complete-listener.test.ts
 
 <br>
 
 Stats        | Results
 -------------|---------
-Test Suites: | 4 passed, 4 total
-Tests:       | 14 passed, 14 total
+Test Suites: | 7 passed, 7 total
+Tests:       | 17 passed, 17 total
 Snapshots:   | 0 total
-Time:        | 30.757 s
+Time:        | 1.757 s
 
 ---
 
@@ -46,3 +45,5 @@ Time:        | 30.757 s
 ## Ran all test suites 🎉
 
 </div>
+
+
