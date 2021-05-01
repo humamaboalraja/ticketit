@@ -10,7 +10,14 @@ The aim of this project is to build an e-commerce microservices architecutre tic
 
 
 ## 🏛 **Architecture**
-Application Architecture/ Components
+Application Architecture/ Components.
+
+1. The architecutre uses NATS streaming server as a messaging system between the services each service has its complete independece incl.(Database).
+2. it consists of 5 services, each service uses Node.js and Mongodb, except **The Expiration** service which uses Redis as a chaching layer and event publisher and reciever
+3. **@ticketit/common package**: that shares refactored dynamic resuable errors, events, middlewares, to all the microservices.
+4. **NGINX Ingress controller**: that is runing in a k8s cluster and configures the HTTP load balancer for the all the different services
+5. **Client application**: that is written with Next.js and React which interacts with all the listed services through k8s Ingress controller
+
 
 ![](.github_assets/Architecture.jpg)
 
@@ -30,15 +37,15 @@ Application Architecture/ Components
 
 Overview of the application services
 
-| Service | Type | Description |
-----------|-----|------------|
-[**Auth**](auth/README.md)  | Microservice |    Authentication functionalities
-[**Tickets**](tickets/README.md)   | Microservice |  Tickets functionalities
-**Orders**    | Microservice |  Order functionalities
-**Expiration** | Microservice |  Orders cancellation system
-**Payments**   | Microservice |  Payments functionalities
-[**Common**](common/README.md)   | [Package](https://www.npmjs.com/package/@ticketit/common) |  Reusable package that deals with common re-usable tools e.g(error handling, middlewares, etc..)
-[**Client**](client/README.md)  | Application |  **React Client application** that interacts with all of these services. 
+| Service | Type | Description | Build
+----------|-----|------------| ----|
+[**Auth**](auth/README.md)  | Microservice |    Authentication functionalities| Passing ☘️
+[**Tickets**](tickets/README.md)   | Microservice |  Tickets functionalities| Passing ☘️
+[**Orders**](orders/README.md)    | Microservice |  Order functionalities| Passing ☘️
+[**Expiration**](expiration/README.md) | Microservice |  Orders cancellation system| Passing ☘️
+[**Payments**](payments/README.md)   | Microservice |  Payments functionalities| Passing ☘️
+[**Common**](common/README.md)   | [Package](https://www.npmjs.com/package/@ticketit/common) |  Reusable package that deals with common re-usable tools e.g(error handling objects, interfaces and types, middlewares, etc..)| Passing ☘️
+[**Client**](client/README.md)  | Application |  **React Client application** that interacts with all of these services. | Passing ☘️
 
 ---
 

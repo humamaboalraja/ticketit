@@ -1,6 +1,7 @@
 # **Ticketit - Tickets/ Products**
 Tickets/ Products service (CRU - Create, Read, Update) features
 
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/humam/tickets?color=0db7ed&label=%F0%9F%90%B3%20Docker%20image%20size&style=flat-square)
 
 <br>
 

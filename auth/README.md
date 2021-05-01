@@ -1,6 +1,7 @@
 # **Ticketit - Auth**
 Authentication system (Signup, Signin, Signout, Userdata) features
 
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/humam/auth?color=0db7ed&label=%F0%9F%90%B3%20Docker%20image%20size&style=flat-square)
 
 <br>
 
@@ -35,9 +36,9 @@ The following table refers to this service endpoints
 Stats        | Results
 -------------|---------
 Test Suites: | 4 passed, 4 total
-Tests:       | 11 passed, 11 total
+Tests:       | 12 passed, 12 total
 Snapshots:   | 0 total
-Time:        | 5.757 s
+Time:        | 8.192 s
 
 ---
 
