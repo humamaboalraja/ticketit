@@ -12,11 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: cd tickets && docker build -t humam/tickets .
-      - name: Login to DockerHub Registry
-        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p {{ secrets.DOCKER_PASSWORD }}
         env:
-          DOCKERHUB_USER: ${{ secrets.DOCKERHUB.USERNAME }}
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB.PASSWORD }}
+          $DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          $DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - run: docker push humam/tickets
       - uses: digitalocean/action-doctl@v2
         with: 
