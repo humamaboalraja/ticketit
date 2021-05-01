@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 
 const start = async () => {
 
-   console.log('Booting 🍑...');
+   console.log('Booting 🍑 🎉 ...');
 
    if(!process.env.JWT_KEY) {
       throw new Error('JWT Key must be defined')
