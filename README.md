@@ -3,6 +3,11 @@
 
 The aim of this project is to build an e-commerce microservices architecutre ticket for exchanging and resaling tickets/ Products 💈
 
+![GitHub repo size](https://img.shields.io/github/repo-size/humamaboalraja/ticketit?style=flat-square)
+![Lines of code](https://img.shields.io/tokei/lines/github/humamaboalraja/ticketit?style=flat-square)
+![GitHub top language](https://img.shields.io/github/languages/top/humamaboalraja/ticketit?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/humamaboalraja/ticketit?style=flat-square)
+
 ---
 
 <br>
@@ -12,7 +17,7 @@ The aim of this project is to build an e-commerce microservices architecutre tic
 ## 🏛 **Architecture**
 Application Architecture/ Components.
 
-1. The architecutre uses NATS streaming server as a messaging system between the services each service has its complete independece incl.(Database).
+1. The architecutre uses `NATS streaming server` as a messaging system between the services each service has its complete independece incl.(Database).
 2. it consists of 5 services, each service uses Node.js and Mongodb, except **The Expiration** service which uses Redis as a chaching layer and event publisher and reciever
 3. **@ticketit/common package**: that shares refactored dynamic resuable errors, events, middlewares, to all the microservices.
 4. **NGINX Ingress controller**: that is runing in a k8s cluster and configures the HTTP load balancer for the all the different services
@@ -20,6 +25,21 @@ Application Architecture/ Components.
 
 
 ![](.github_assets/Architecture.jpg)
+
+
+
+---
+
+<br>
+
+
+## Testing 🧪
+
+Each service uses Jest testing Framework, and Cypress is used in the client application and the architecture includes Unit, Integration, and End-to-End tests.
+
+You can run the Unit and Integration tests by simply running `npm run test`.
+
+If you want to run the End-to-End tests, make sure you build and start the app, then, in another terminal window run either `npm run cy:run` (to run Cypress without its GUI) or `npm run cy:open` (to run Cypress with its GUI).
 
 
 
@@ -51,7 +71,7 @@ Overview of the application services
 
 <br>
 
-## 🧪 **Setup**
+## 📦 **Setup**
 
 1. ###  **Tools Setup**
    One of the main prerequisists to run this architecture is having Docker, Kubernetes/ Kubectl, Skaffold, Node.js, ingress-nginx controller installed.
