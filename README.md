@@ -1,7 +1,16 @@
 ![](.github_assets/cover.jpg)
 
 
-The aim of this project is to build an e-commerce microservices architecutre ticket for exchanging and resaling tickets/ Products 💈
+<div align="center">
+
+The aim of this project is to build an e-commerce microservices architecture for exchanging and resaling Products 💈
+
+![GitHub repo size](https://img.shields.io/github/repo-size/humamaboalraja/ticketit?style=flat-square)
+![Lines of code](https://img.shields.io/tokei/lines/github/humamaboalraja/ticketit?style=flat-square)
+![GitHub top language](https://img.shields.io/github/languages/top/humamaboalraja/ticketit?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/humamaboalraja/ticketit?style=flat-square)
+
+</div>
 
 ---
 
@@ -12,7 +21,7 @@ The aim of this project is to build an e-commerce microservices architecutre tic
 ## 🏛 **Architecture**
 Application Architecture/ Components.
 
-1. The architecutre uses NATS streaming server as a messaging system between the services each service has its complete independece incl.(Database).
+1. The architecutre uses `NATS streaming server` as a messaging system between the services each service has its complete independece incl.(Database).
 2. it consists of 5 services, each service uses Node.js and Mongodb, except **The Expiration** service which uses Redis as a chaching layer and event publisher and reciever
 3. **@ticketit/common package**: that shares refactored dynamic resuable errors, events, middlewares, to all the microservices.
 4. **NGINX Ingress controller**: that is runing in a k8s cluster and configures the HTTP load balancer for the all the different services
@@ -20,6 +29,21 @@ Application Architecture/ Components.
 
 
 ![](.github_assets/Architecture.jpg)
+
+
+
+---
+
+<br>
+
+
+## Testing 🧪
+
+Each service uses Jest testing Framework, and Cypress is used in the client application and the architecture includes Unit, Integration, and End-to-End tests.
+
+You can run the Unit and Integration tests by simply running `npm run test`.
+
+If you want to run the End-to-End tests, make sure you build and start the app, then, in another terminal window run either `npm run cy:run` (to run Cypress without its GUI) or `npm run cy:open` (to run Cypress with its GUI).
 
 
 
@@ -51,7 +75,7 @@ Overview of the application services
 
 <br>
 
-## 🧪 **Setup**
+## 📦 **Setup**
 
 1. ###  **Tools Setup**
    One of the main prerequisists to run this architecture is having Docker, Kubernetes/ Kubectl, Skaffold, Node.js, ingress-nginx controller installed.
@@ -77,7 +101,7 @@ Overview of the application services
 
 <br>
 
-2. ### **Setting up environment secrets**
+3. ### **Setting up environment secrets**
    This cluster has two environment secrets that must be setup before running it ```jwt-secret``` and ```stripe-secret```, so activate your Kubernetes in your Docker environment if you didn't, and let's setup those secrets 🔒
 
    ---
@@ -93,6 +117,60 @@ Overview of the application services
    ```lua
    create secret generic stripe-secret --from-literal STRIPE_KEY=YOUR_SECRET_KEY_GOES_HERE
    ```
+
+
+   ---   
+
+
+<br>
+
+### 4. **Adding entries to the system hosts file**
+
+Add `ticketit.dev` host name to your system hosts entries in order to run the application in your browser, If you're using a Mac with OS X, to edit your /etc/hosts file, open a Terminal window and run the following command:
+
+   ```
+   sudo nano /etc/hosts
+   ```
+
+Adding Ingress.Nginx local to the `/etc/hosts` which is `ticketit.dev`, you can change the host name from `infra/k8s-dev/ingress-srv.yaml`
+
+
+```
+[IP address]  [URL]
+127.0.0.1    ticketit.dev
+```
+     
+---
+
+
+- Editing your /etc/hosts file using Windows
+  - If you're using Windows, to edit your \etc\hosts file 
+   - open `[SystemRoot]\system32\drivers\etc\hosts` and edit the file. 
+    - (The `\etc\hosts` file usually exists at `%windir%\system32\drivers\etc\hosts`) 
+    - If the directory and file don't exist, you can create them. 
+    - Some versions of Windows require that users have admin privileges to create or make changes to this file.
+
+---
+
+
+<br>
+
+
+### 4. **Bypassing Chrome**
+
+In case chrome gave you an error of that `Your conenction to this site is not secure` you can bypass this by typing the following command in your browser tab:
+   ```
+   thisisunsafe
+   ```
+
+
+
+
+---
+
+
+<br>
+
 ## 🚀 **Run**
 
 You cna create/ run the cluster locally or on mutliple providers, but to run it locally after the setup use can do so using skaffold, which will cause all the images to build:
