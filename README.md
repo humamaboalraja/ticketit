@@ -1,12 +1,16 @@
 ![](.github_assets/cover.jpg)
 
 
+<div align="center">
+
 The aim of this project is to build an e-commerce microservices architecture for exchanging and resaling Products 💈
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/humamaboalraja/ticketit?style=flat-square)
 ![Lines of code](https://img.shields.io/tokei/lines/github/humamaboalraja/ticketit?style=flat-square)
 ![GitHub top language](https://img.shields.io/github/languages/top/humamaboalraja/ticketit?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/humamaboalraja/ticketit?style=flat-square)
+
+</div>
 
 ---
 
