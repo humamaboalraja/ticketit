@@ -18,6 +18,9 @@
     "react-stripe-checkout": "^2.6.3"
   },
   "devDependencies": {
-    "cypress": "^7.1.0"
+    "@testing-library/cypress": "^7.0.6",
+    "cypress": "^7.2.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "test-data-bot": "^0.8.0"
   }
 }
