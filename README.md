@@ -126,7 +126,7 @@ Overview of the application services
 
 ### 4. **Adding entries to the system hosts file**
 
-If you're using a Mac with OS X, to edit your /etc/hosts file, open a Terminal window and run the following command:
+Add `ticketit.dev` host name to your system hosts entries in order to run the application in your browser, If you're using a Mac with OS X, to edit your /etc/hosts file, open a Terminal window and run the following command:
 
    ```
    sudo nano /etc/hosts
@@ -149,6 +149,22 @@ Adding Ingress.Nginx local to the `/etc/hosts` which is `ticketit.dev`, you can 
     - (The `\etc\hosts` file usually exists at `%windir%\system32\drivers\etc\hosts`) 
     - If the directory and file don't exist, you can create them. 
     - Some versions of Windows require that users have admin privileges to create or make changes to this file.
+
+---
+
+
+<br>
+
+
+### 4. **Bypassing Chrome**
+
+In case chrome gave you an error of that `Your conenction to this site is not secure` you can bypass this by typing the following command in your browser tab:
+   ```
+   thisisunsafe
+   ```
+
+
+
 
 ---
 
