@@ -1,7 +1,7 @@
 ![](.github_assets/cover.jpg)
 
 
-The aim of this project is to build an e-commerce microservices architecutre ticket for exchanging and resaling tickets/ Products 💈
+The aim of this project is to build an e-commerce microservices architecture for exchanging and resaling Products 💈
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/humamaboalraja/ticketit?style=flat-square)
 ![Lines of code](https://img.shields.io/tokei/lines/github/humamaboalraja/ticketit?style=flat-square)
