@@ -101,7 +101,7 @@ Overview of the application services
 
 <br>
 
-2. ### **Setting up environment secrets**
+3. ### **Setting up environment secrets**
    This cluster has two environment secrets that must be setup before running it ```jwt-secret``` and ```stripe-secret```, so activate your Kubernetes in your Docker environment if you didn't, and let's setup those secrets 🔒
 
    ---
@@ -117,6 +117,44 @@ Overview of the application services
    ```lua
    create secret generic stripe-secret --from-literal STRIPE_KEY=YOUR_SECRET_KEY_GOES_HERE
    ```
+
+
+   ---   
+
+
+<br>
+
+### 4. **Adding entries to the system hosts file**
+
+If you're using a Mac with OS X, to edit your /etc/hosts file, open a Terminal window and run the following command:
+
+   ```
+   sudo nano /etc/hosts
+   ```
+
+Adding Ingress.Nginx local to the `/etc/hosts` which is `ticketit.dev`, you can change the host name from `infra/k8s-dev/ingress-srv.yaml`
+
+
+```
+[IP address]  [URL]
+127.0.0.1    ticketit.dev
+```
+     
+---
+
+
+- Editing your /etc/hosts file using Windows
+  - If you're using Windows, to edit your \etc\hosts file 
+   - open `[SystemRoot]\system32\drivers\etc\hosts` and edit the file. 
+    - (The `\etc\hosts` file usually exists at `%windir%\system32\drivers\etc\hosts`) 
+    - If the directory and file don't exist, you can create them. 
+    - Some versions of Windows require that users have admin privileges to create or make changes to this file.
+
+---
+
+
+<br>
+
 ## 🚀 **Run**
 
 You cna create/ run the cluster locally or on mutliple providers, but to run it locally after the setup use can do so using skaffold, which will cause all the images to build:
