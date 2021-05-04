@@ -28,8 +28,8 @@ describe('Tickets', () => {
 
    it('Should return not authorized error when user is not logged in but trying to create a ticket', () => {
 
-      cy.findByText('Sell Tickets').click()
-      cy.findByText('Purchase now 😍').click();
+      cy.visit('tickets/new')
+      cy.findByText('Create Ticket').click();
       cy.findByText('Not authorized')
    })
 })
