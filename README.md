@@ -41,9 +41,9 @@ Application Architecture/ Components.
 
 Each service uses Jest testing Framework, and Cypress is used in the client application and the architecture includes Unit, Integration, and End-to-End tests.
 
-You can run the Unit and Integration tests by simply running `npm run test`.
+You can run the Unit and Integration tests by simply running `npm run test` in all the backend services.
 
-If you want to run the End-to-End tests, make sure you build and start the app, then, in another terminal window run either `npm run cy:run` (to run Cypress without its GUI) or `npm run cy:open` (to run Cypress with its GUI).
+If you want to run the client's End-to-End tests, make sure you that the app pod is running, then, in another terminal window run `npx cypress open`.
 
 
 
