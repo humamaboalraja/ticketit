@@ -55,7 +55,7 @@ const NewTicket = () => {
           />
         </div>
         {errors}
-        <button className="btn btn-block btn-dark">Submit</button>
+        <button className="btn btn-block btn-dark">Create Ticket</button>
       </form>
     </div>
   );
