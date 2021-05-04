@@ -9,7 +9,7 @@ describe('Orders', () => {
          cy.get(`:nth-child(1) > .card > .card-body > .btn`).click()
          cy.findByText('Purchase now 😍').click();
          cy.get('span').click();
-         cy.wait(3000)
+         cy.wait(2000)
          cy.get('iframe').then($iframe => {
             const doc = $iframe.contents()
             let input = doc.find('input')[0]
@@ -30,7 +30,7 @@ describe('Orders', () => {
          cy.get(`:nth-child(${Math.floor(Math.random() * 6) + 1}) > .card > .card-body > .btn`).click()
          cy.findByText('Purchase now 😍').click();
          cy.get('span').click();
-         cy.wait(3000)
+         cy.wait(2000)
          cy.get('iframe').then($iframe => {
             const doc = $iframe.contents()
             let input = doc.find('input')[0]
