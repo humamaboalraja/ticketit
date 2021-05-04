@@ -1,4 +1,5 @@
 {
    "baseUrl": "https://ticketit.dev",
-   "integrationFolder":  "cypress/e2e"
+   "integrationFolder":  "cypress/e2e",
+   "chromeWebSecurity": false
 }
