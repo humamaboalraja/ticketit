@@ -5,5 +5,10 @@ const buildUser = build('User').fields({
    password: fake(f => f.internet.password())
 });
 
+const buildTicket = build('Ticket').fields({
+   ticket_title: fake(f => f.commerce.productName()),
+   price: fake(f => f.commerce.price())
+});
 
-export {buildUser}
+
+export {buildUser, buildTicket}
