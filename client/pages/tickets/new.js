@@ -41,6 +41,7 @@ const NewTicket = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="form-control"
+            placeholder="E.g NFT"
           />
         </div>
         <div className="form-group">
@@ -50,10 +51,11 @@ const NewTicket = () => {
             onBlur={onBlur}
             onChange={(e) => setPrice(e.target.value)}
             className="form-control"
+            placeholder="E.g 20$"
           />
         </div>
         {errors}
-        <button className="btn btn-primary">Submit</button>
+        <button className="btn btn-block btn-dark">Submit</button>
       </form>
     </div>
   );
